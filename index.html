@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Furniture offers custom wood furniture, interior decoration, doors, partitions, and expert labour contractor services for homes and commercial spaces.">
+    <meta name="keywords" content="modern furniture, interior decorators, wood furniture, doors, partition fitting, labour contractor, custom carpentry, home interiors">
+    <meta property="og:title" content="Modern Furniture | Interior Decorators & Labour Contractor">
+    <meta property="og:description" content="Premium custom furniture, interior design, fitting, and turnkey contracting solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80">
+    <title>Modern Furniture | Interior Decorators & Labour Contractor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#991b1b',
+                            darkRed: '#7f1d1d',
+                            blue: '#1e3a8a',
+                            darkBlue: '#172554',
+                            wood: '#854d0e',
+                            sand: '#fef3c7'
+                        }
+                    },
+                    boxShadow: {
+                        soft: '0 20px 40px rgba(17, 24, 39, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+
+        .glass {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .focus-ring:focus-visible,
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 3px solid rgba(153, 27, 27, 0.45);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 40;
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+        }
+
+        .floating-cta-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .floating-cta-button:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-cta-button:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+        }
+
+        .whatsapp-btn:hover {
+            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.35);
+        }
+
+        .call-btn {
+            background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+        }
+
+        .call-btn:hover {
+            box-shadow: 0 6px 28px rgba(153, 27, 27, 0.35);
+        }
+
+        .floating-label {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .floating-cta-button:hover .floating-label {
+            opacity: 1;
+        }
+
+        @media (max-width: 640px) {
+            .floating-cta {
+                bottom: 16px;
+                right: 16px;
+                gap: 10px;
+            }
+
+            .floating-cta-button {
+                width: 56px;
+                height: 56px;
+                font-size: 22px;
+            }
+
+            .floating-label {
+                display: none;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Modern Furniture",
+      "description": "Interior decorators and labour contractor specializing in custom wood furniture, doors, partition fitting, and turnkey interior solutions.",
+      "telephone": "+91-9322229716",
+      "email": "shambhusharma696@gmail.com",
+      "areaServed": "India",
+      "priceRange": "₹₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-brand-red selection:text-white">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex flex-col focus-ring" aria-label="Modern Furniture home">
+                <span class="font-serif font-extrabold text-2xl sm:text-3xl tracking-wider text-brand-red uppercase">Modern Furniture</span>
+                <span class="text-[10px] sm:text-xs font-semibold text-brand-blue tracking-widest uppercase">Interior Decorators & Labour Contractor</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-stone-700" aria-label="Main navigation">
+                <a href="#home" class="hover:text-brand-red transition-colors">Home</a>
+                <a href="#services" class="hover:text-brand-red transition-colors">Services</a>
+                <a href="#about" class="hover:text-brand-red transition-colors">About</a>
+                <a href="#gallery" class="hover:text-brand-red transition-colors">Gallery</a>
+                <a href="#reviews" class="hover:text-brand-red transition-colors">Reviews</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-red text-white font-semibold shadow-md hover:bg-brand-darkRed transition-all transform hover:-translate-y-0.5">Get Quote</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden text-stone-700 focus-ring p-2 rounded-lg hover:bg-stone-100" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-6 py-4 space-y-3 shadow-lg" aria-label="Mobile menu">
+            <a href="#home" class="block text-stone-700 font-medium hover:text-brand-red py-2">Home</a>
+            <a href="#services" class="block text-stone-700 font-medium hover:text-brand-red py-2">Services</a>
+            <a href="#about" class="block text-stone-700 font-medium hover:text-brand-red py-2">About</a>
+            <a href="#gallery" class="block text-stone-700 font-medium hover:text-brand-red py-2">Gallery</a>
+            <a href="#reviews" class="block text-stone-700 font-medium hover:text-brand-red py-2">Reviews</a>
+            <a href="#contact" class="block text-center w-full py-3 rounded-xl bg-brand-red text-white font-semibold shadow">Get Quote</a>
+        </div>
+    </header>
+
+    <div class="floating-cta" id="floating-cta">
+        <a href="tel:+919322229716" class="floating-cta-button call-btn" aria-label="Call us" title="Call us now">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span class="floating-label">Call Now</span>
+        </a>
+
+        <a href="https://wa.me/919322229716?text=Hello%20Modern%20Furniture%2C%20I%20would%20like%20to%20discuss%20my%20project%20requirements." target="_blank" rel="noopener noreferrer" class="floating-cta-button whatsapp-btn" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span class="floating-label">WhatsApp</span>
+        </a>
+    </div>
+
+    <main>
+        <section id="home" class="hero-bg min-h-[85vh] flex items-center justify-center text-center px-4 relative">
+            <div class="max-w-5xl mx-auto space-y-6 text-white py-20">
+                <div class="inline-flex items-center space-x-2 bg-white/10 glass px-4 py-1.5 rounded-full text-amber-300 font-medium text-xs sm:text-sm border border-white/20">
+                    <i class="fa-solid fa-award" aria-hidden="true"></i>
+                    <span>Premier Wood Craftsmanship & Contracting</span>
+                </div>
+                <h1 class="font-serif font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-tight">
+                    MODERN <span class="text-amber-400">FURNITURE</span>
+                </h1>
+                <p class="text-lg sm:text-2xl font-light text-stone-200 max-w-3xl mx-auto leading-relaxed">
+                    All kinds of interior decorators of wood furniture, doors, partition fitting, and expert labour contractor services tailored for homes, offices, and commercial spaces.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red text-white font-semibold shadow-xl hover:bg-brand-darkRed transition-all transform hover:-translate-y-1 focus-ring">
+                        Book Consultation
+                    </a>
+                    <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 glass text-white font-semibold border border-white/30 hover:bg-white/20 transition-all focus-ring">
+                        Explore Services
+                    </a>
+                </div>
+                <div class="pt-8 flex flex-wrap items-center justify-center gap-4 text-sm text-stone-200">
+                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Custom wood furniture</span>
+                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Premium interior finishes</span>
+                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Turnkey contracting</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-red">Our Core Expertise</h2>
+                <h3 class="font-serif text-3xl sm:text-5xl font-extrabold text-stone-900">Crafting Spaces, Elevating Interiors</h3>
+                <p class="text-stone-600 text-base sm:text-lg">We deliver precision woodworking, elegant partitions, and professional labour contracting solutions designed around your lifestyle and business needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-stone-200 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-50 text-brand-wood flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-couch" aria-hidden="true"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-xl mb-3 text-stone-900">Custom Wood Furniture</h4>
+                        <p class="text-stone-600 leading-relaxed text-sm">Bespoke tables, wardrobes, TV units, luxury beds, and modular kitchen cabinetry built with premium timber and expert finishing.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-100 flex items-center text-brand-red font-semibold text-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-stone-200 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-50 text-brand-wood flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-xl mb-3 text-stone-900">Doors & Architectural Frames</h4>
+                        <p class="text-stone-600 leading-relaxed text-sm">Design, fabrication, and installation of stylish panel doors, flush doors, decorative entrances, and robust door frames.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-100 flex items-center text-brand-red font-semibold text-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-stone-200 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-50 text-brand-wood flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-border-all" aria-hidden="true"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-xl mb-3 text-stone-900">Partition Fitting & Panelling</h4>
+                        <p class="text-stone-600 leading-relaxed text-sm">Creative wooden and glass office/home partitions, wall paneling, acoustic dividers, and smart space optimization.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-100 flex items-center text-brand-red font-semibold text-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-stone-200 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-50 text-brand-wood flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-helmet-safety" aria-hidden="true"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-xl mb-3 text-stone-900">Expert Labour Contractor</h4>
+                        <p class="text-stone-600 leading-relaxed text-sm">Skilled carpenters, interior fit-out technicians, and supervisors available for turnkey residential and commercial projects.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-100 flex items-center text-brand-red font-semibold text-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-stone-200 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-50 text-brand-wood flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-paint-roller" aria-hidden="true"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-xl mb-3 text-stone-900">Interior Decorators</h4>
+                        <p class="text-stone-600 leading-relaxed text-sm">Comprehensive design planning, aesthetic coordination, polishing, texture finishes, and complete interior transformations.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-100 flex items-center text-brand-red font-semibold text-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-xl transition-all duration-300 border border-stone-200 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-50 text-brand-wood flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-xl mb-3 text-stone-900">Turnkey Contracting</h4>
+                        <p class="text-stone-600 leading-relaxed text-sm">End-to-end execution from procurement and woodworking to polishing, finishing, and handover.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-100 flex items-center text-brand-red font-semibold text-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 bg-stone-100 border-y border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-red bg-red-50 px-3 py-1 rounded-full border border-red-100">About Modern Furniture</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-stone-900 leading-tight">Mastering Woodwork & Interior Craft for Quality Living</h2>
+                        <p class="text-stone-600 leading-relaxed text-base sm:text-lg">
+                            At <strong class="text-stone-900">Modern Furniture</strong>, we blend traditional craftsmanship with contemporary design to create functional, elegant, and long-lasting interiors. Whether you need custom furniture, premium door fittings, partition work, or complete turnkey interior execution, our team brings precision, professionalism, and a detail-focused approach to every project.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 pt-4">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                                <span class="block font-serif font-bold text-3xl text-brand-red mb-1">100+</span>
+                                <span class="text-stone-600 text-sm font-medium">Projects completed</span>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                                <span class="block font-serif font-bold text-3xl text-brand-blue mb-1">100%</span>
+                                <span class="text-stone-600 text-sm font-medium">Skilled artisans & labour</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="Carpentry work and finishing" class="w-full h-[420px] object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl -z-0"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-stone-50 border border-stone-200 rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-stone-900 mb-2">Tailored Design</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Each project is planned around your space, style, and functional needs.</p>
+                    </div>
+                    <div class="bg-stone-50 border border-stone-200 rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-stone-900 mb-2">Trusted Experts</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Experienced artisans and supervisors ensuring smooth execution.</p>
+                    </div>
+                    <div class="bg-stone-50 border border-stone-200 rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-stone-900 mb-2">Premium Finish</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Refined detailing, high-quality materials, and flawless final polish.</p>
+                    </div>
+                    <div class="bg-stone-50 border border-stone-200 rounded-2xl p-6 text-center">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-stone-900 mb-2">On-Time Delivery</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Efficient workflow from concept to final installation and handover.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-red">Visual Showcase</h2>
+                <h3 class="font-serif text-3xl sm:text-5xl font-extrabold text-stone-900">Our Craftsmanship in Action</h3>
+                <p class="text-stone-600 text-base sm:text-lg">Explore examples of our custom furniture, flawless partitions, and door fittings crafted for modern spaces.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80 bg-stone-200">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="Modern sofa and wood setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-semibold text-lg">Custom Wood Interior</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80 bg-stone-200">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Wooden partition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-semibold text-lg">Partition & Wall Fitting</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80 bg-stone-200">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Designer wooden doors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-semibold text-lg">Designer Wooden Doors</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80 bg-stone-200">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" alt="Living room furnishing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-semibold text-lg">Living Space Decor</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80 bg-stone-200">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" alt="Bed and woodwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-semibold text-lg">Bedroom Furnishing</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md h-80 bg-stone-200">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Office woodwork" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-serif font-semibold text-lg">Commercial Interiors</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-24 bg-stone-100 border-y border-stone-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-brand-red">Client Feedback</h2>
+                    <h3 class="font-serif text-3xl sm:text-5xl font-extrabold text-stone-900">What Our Clients Say</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed mb-6">"The custom wardrobe and panel work were beautifully executed. The finish quality was exceptional and the team was highly professional."</p>
+                        <div>
+                            <p class="font-bold text-stone-900">Sandeep Verma</p>
+                            <p class="text-sm text-stone-500">Residential Client</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed mb-6">"Their labour team handled our office fit-out efficiently and on time. Good communication, clean work, and dependable service from start to finish."</p>
+                        <div>
+                            <p class="font-bold text-stone-900">Neha Sharma</p>
+                            <p class="text-sm text-stone-500">Commercial Client</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed mb-6">"The furniture design was exactly what we wanted. They understood the brief, guided us well, and delivered with craftsmanship we can trust."</p>
+                        <div>
+                            <p class="font-bold text-stone-900">Rajeev Pandey</p>
+                            <p class="text-sm text-stone-500">Interior Project</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-stone-900 text-stone-200 pt-20 pb-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="font-serif text-3xl font-bold text-white mb-2">MODERN FURNITURE</h2>
+                        <p class="text-brand-red font-semibold text-sm tracking-wider uppercase">Interior Decorators & Labour Contractor</p>
+                    </div>
+                    <p class="text-stone-400 leading-relaxed text-sm sm:text-base">
+                        Specializing in custom wood furniture, doors, partition fittings, interior decoration, and coordinated labour contracting for residential and commercial projects.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center text-brand-red">
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-stone-400 font-medium">Call Us Anytime</span>
+                                <a href="tel:+919322229716" class="text-white font-semibold hover:text-brand-red transition-colors">+91 93 2222 9716</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center text-brand-red">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-stone-400 font-medium">Email Inquiry</span>
+                                <a href="mailto:shambhusharma696@gmail.com" class="text-white font-semibold hover:text-brand-red transition-colors">shambhusharma696@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stone-800/80 p-8 rounded-3xl border border-stone-700/60 shadow-xl">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Request an Estimate</h3>
+                    <p class="text-stone-400 text-sm mb-6">Fill out the form below and our team will get back to you promptly.</p>
+
+                    <form id="inquiry-form" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-xs font-medium text-stone-300 mb-1">Your Name</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-0 focus:border-brand-red transition-colors">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-xs font-medium text-stone-300 mb-1">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-0 focus:border-brand-red transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-xs font-medium text-stone-300 mb-1">Service Required</label>
+                            <select id="service" name="service" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-0 focus:border-brand-red transition-colors">
+                                <option>Wood Furniture Customization</option>
+                                <option>Doors & Frames Fitting</option>
+                                <option>Partition Fitting & Panelling</option>
+                                <option>Labour Contractor Services</option>
+                                <option>Complete Interior Decorating</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-xs font-medium text-stone-300 mb-1">Project Details</label>
+                            <textarea id="message" name="message" rows="3" required class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-white text-sm focus:ring-0 focus:border-brand-red transition-colors"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brand-red text-white font-semibold shadow-lg hover:bg-brand-darkRed transition-all focus-ring">
+                            Submit Inquiry
+                        </button>
+                        <div id="form-success" aria-live="polite" class="hidden text-emerald-400 text-sm font-medium text-center pt-2">
+                            <i class="fa-solid fa-circle-check mr-1" aria-hidden="true"></i> Thank you! Your inquiry has been sent successfully.
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500">
+                <p>&copy; 2026 Modern Furniture. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-stone-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-stone-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden));
+            });
+
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('inquiry-form');
+            const successDiv = document.getElementById('form-success');
+
+            if (successDiv) {
+                successDiv.classList.remove('hidden');
+            }
+
+            if (form) {
+                form.reset();
+            }
+
+            setTimeout(() => {
+                if (successDiv) {
+                    successDiv.classList.add('hidden');
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
